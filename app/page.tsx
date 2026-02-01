@@ -1,16 +1,22 @@
-import { GridScan } from "./components/GridScan"
+import { Suspense } from "react";
+import Home from "./components/home";
+import Navbar from "@/app/components/layout/navbar";
+import About from "@/app/components/about/about";
+import Projects from "@/app/components/projects/project";
+import Contact from "@/app/components/contact/contact";
+import Footer from "@/app/components/layout/footer";
 
-<div style={{ width: '100%', height: '600px', position: 'relative' }}>
-  <GridScan
-    sensitivity={0.55}
-    lineThickness={1}
-    linesColor="#392e4e"
-    gridScale={0.1}
-    scanColor="#FF9FFC"
-    scanOpacity={0.4}
-    enablePost
-    bloomIntensity={0.6}
-    chromaticAberration={0.002}
-    noiseIntensity={0.01}
-  />
-</div>
+export default function Page() {
+  return (
+    <main className="relative bg-slate-950 w-full overflow-x-hidden">
+      <Navbar />
+      <Home />
+      <About />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Projects />
+      </Suspense>
+      <Contact />
+      <Footer />
+    </main>
+  );
+}
