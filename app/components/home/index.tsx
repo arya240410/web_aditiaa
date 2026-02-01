@@ -5,6 +5,7 @@ import Lanyard from "../decoration/lanyard";
 import { motion, Variants } from "framer-motion";
 import { Code2, Terminal, Cpu } from "lucide-react";
 import Image from "next/image";
+import ScrollDown from "../ui/scroll-down";
 
 export default function Home() {
   const containerVariants: Variants = {
@@ -102,6 +103,11 @@ export default function Home() {
               <Lanyard />
             </motion.div>
           </section>
+
+          {/* Scroll Down Indicator */}
+          <div className="hidden md:block">
+            <ScrollDown />
+          </div>
         </motion.div>
       </div>
     </div>

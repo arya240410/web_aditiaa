@@ -5,6 +5,7 @@ import About from "@/app/components/about/about";
 import Projects from "@/app/components/projects/project";
 import Contact from "@/app/components/contact/contact";
 import Footer from "@/app/components/layout/footer";
+import BackToTop from "./components/ui/back-to-top";
 
 export default function Page() {
   return (
@@ -16,7 +17,9 @@ export default function Page() {
         <Projects />
       </Suspense>
       <Contact />
+      <Contact />
       <Footer />
+      <BackToTop />
     </main>
   );
 }
