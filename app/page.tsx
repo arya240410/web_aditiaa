@@ -17,7 +17,6 @@ export default function Page() {
         <Projects />
       </Suspense>
       <Contact />
-      <Contact />
       <Footer />
       <BackToTop />
     </main>
