@@ -1,10 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Optimisasi keamanan dan performa
-  poweredByHeader: false, // Sembunyikan X-Powered-By header
+  poweredByHeader: false,
 
-  // Headers keamanan tambahan
   async headers() {
     return [
       {
@@ -36,7 +34,6 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      // Static assets
       {
         source: "/static/:path*",
         headers: [
@@ -49,44 +46,51 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Redirect untuk URL mencurigakan
   async redirects() {
     return [
-      // Block common spam/judol URL patterns
       {
-        source: "/:path*slot:rest*",
+        source: "/slot/:path*",
         destination: "/",
         permanent: false,
       },
       {
-        source: "/:path*gacor:rest*",
+        source: "/gacor/:path*",
         destination: "/",
         permanent: false,
       },
       {
-        source: "/:path*togel:rest*",
+        source: "/togel/:path*",
         destination: "/",
         permanent: false,
       },
       {
-        source: "/:path*casino:rest*",
+        source: "/casino/:path*",
         destination: "/",
         permanent: false,
       },
       {
-        source: "/:path*poker:rest*",
+        source: "/poker/:path*",
         destination: "/",
         permanent: false,
       },
       {
-        source: "/:path*judi:rest*",
+        source: "/judi/:path*",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/judol/:path*",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/maxwin/:path*",
         destination: "/",
         permanent: false,
       },
     ];
   },
 
-  // Images configuration
   images: {
     remotePatterns: [
       {
@@ -94,7 +98,6 @@ const nextConfig: NextConfig = {
         hostname: "**",
       },
     ],
-    // Blokir domain gambar yang tidak diizinkan bisa ditambahkan di sini
   },
 };
 
