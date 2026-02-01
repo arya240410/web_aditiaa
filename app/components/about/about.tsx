@@ -129,7 +129,6 @@ export default function About() {
               </div>
             </motion.div>
 
-            {/* Tech Stack - Wide */}
             <motion.div
               variants={itemVariants}
               className="lg:col-span-12 bg-slate-950/30 backdrop-blur-md border border-white/5 rounded-3xl p-8 flex flex-col md:flex-row items-center gap-8"

@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ExternalLink, Github, Layers, Palette, Globe } from "lucide-react";
 
-// Project Data Type
 type Project = {
   id: number;
   title: string;

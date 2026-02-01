@@ -8,10 +8,8 @@ export default function Contact() {
   const [copied, setCopied] = useState(false);
   const [typingComplete, setTypingComplete] = useState(false);
 
-  // Commands to "type" out
   const command = "./contact_me.sh";
 
-  // Social data
   const contacts = [
     {
       label: "GitHub",
@@ -44,7 +42,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
-      {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-purple-600/20 rounded-full blur-[100px] -z-10" />
 
       <div className="container mx-auto px-6 max-w-4xl">
@@ -54,7 +51,6 @@ export default function Contact() {
           viewport={{ once: true }}
           className="w-full bg-[#1e1e1e] rounded-xl border border-white/10 shadow-2xl overflow-hidden font-mono text-sm md:text-base"
         >
-          {/* Terminal Header */}
           <div className="bg-[#2d2d2d] px-4 py-3 flex items-center justify-between border-b border-white/5">
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 rounded-full bg-red-500" />
@@ -69,7 +65,6 @@ export default function Contact() {
           </div>
 
           <div className="p-6 md:p-8 min-h-[300px] text-slate-300 space-y-4">
-            {/* Prompt & Command Typing */}
             <div className="flex items-center gap-3">
               <span className="text-green-400">arya@desktop:~$</span>
               <span className="flex">
@@ -119,7 +114,6 @@ export default function Contact() {
                         {contact.value}
                       </a>
 
-                      {/* Specific Copy button for email */}
                       {contact.label === "Email" && (
                         <button
                           onClick={handleCopy}
